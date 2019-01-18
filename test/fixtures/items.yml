@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  stock: 1
+  price: 9.99
+  discount_price: 9.99
+  identifier: MyString
+  branch: one
+
+two:
+  name: MyString
+  stock: 1
+  price: 9.99
+  discount_price: 9.99
+  identifier: MyString
+  branch: two
