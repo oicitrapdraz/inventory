@@ -4,7 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.4.1'
 
 gem 'devise', '~> 4.5'
+
 gem 'activeadmin', '~> 1.4', '>= 1.4.3'
+
+gem 'cancan', '~> 1.6', '>= 1.6.10'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
