@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :companies, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
   devise_for :workers
 
   unauthenticated :user do
@@ -10,4 +11,5 @@ Rails.application.routes.draw do
   end
 
   get 'home/welcome'
+  get 'home/dashboard'
 end

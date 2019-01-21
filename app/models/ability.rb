@@ -7,17 +7,18 @@ class Ability
     if user.super_admin?
       can :manage, Company
     else
-      can :manage, Company, id: user.id
-      # Esto se traduce a si company.id es igual a user.id (user es current user) entonces te doy permiso
+      alias_action :read, :update, :destroy, to: :rud
 
-      can :manage, Branch, company: { id: user.id }
-      # Esto se traduce a si branch.company.id es igual a user.id (user es current user) entonces te doy permiso
+      can :rud, Company, id: user.id
 
-      can :manage, Worker, branch: { company: { id: user.id } }
-      # Esto se traduce a si work.branch.company.id es igual a user.id (user es current user) entonces te doy permiso
+      can :create, Branch
+      can :rud, Branch, company: { id: user.id }
 
-      can :manage, Item, branch: { company: { id: user.id } }
-      # Esto se traduce a si item.branch.company.id es igual a user.id (user es current user) entonces te doy permiso
+      can :create, Worker
+      can :rud, Worker, branch: { company: { id: user.id } }
+
+      can :create, Item
+      can :rud, Item, branch: { company: { id: user.id } }
     end
   end
 end

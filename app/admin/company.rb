@@ -1,7 +1,7 @@
 ActiveAdmin.register Company do
   menu label: 'Compañias'
 
-  permit_params Company.attribute_names.map(&:to_sym)
+  permit_params :name, :email, :password, :password_confirmation
 
   index do
     selectable_column
